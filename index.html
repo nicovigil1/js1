@@ -6,7 +6,6 @@
   <title>Number Guesser</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" media="screen" href="main.css">
-  <script src="main.js"></script>
 </head>
 <body>
   <nav>
@@ -17,18 +16,29 @@
     </ul>
   </nav>
   <div class="grid-container">
+    <div class='range-guess'>
+      <h3 class="range-header">Define your starting range:</h3>
+      <div class='range-inputs'>
+        <input type="number" placeholder="min." id="min">
+        <input type="number" placeholder="max." id="max">
+      </div>
+      <div class="range-submit">
+        <input type="submit" value="set starting range" onclick="setRange()">
+      </div>
+    </div>
     <div class="guessbox">
-      <h3>Guess a Number!</h3>
-      <div>
+      <div id="number-guess">
+        <h3>Guess a Number!</h3>
         <form>
-          <input id="guessbox" type="text">
+          <input id="guess" type="number">
         </form>
-        <button>Guess!</button>
-        <button>Clear</button>
-        <button>Reset</button>
-        <p id="display_guess"></p>
+        <button onclick="guessCheck()">Guess!</button>
+        <button id='clear' onclick="clearInput()" disabled>Clear</button>
+        <button onclick="reset()">Reset</button>
+        <p id="display-guess"></p>
       </div>
     </div>
   </div>
+  <script src="main.js"></script>
 </body>
 </html>

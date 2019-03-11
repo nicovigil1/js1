@@ -6,7 +6,46 @@ li {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
-  grid-template-areas: ". . ." ". guessbox ." ". . .";
+  grid-template-areas: ". range-guess ." ". guessbox ." ". . .";
 }
 
-.guessbox { grid-area: guessbox; }
+.guessbox { 
+  grid-area: guessbox;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center; 
+  /* align-items: center;  */
+  /* align-content: center;  */
+}
+
+.range-guess {
+  grid-area: range-guess;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-columns: 1fr;
+  grid-template-areas: "range-header" "range-inputs" "range-submit"
+  /* 
+  display: flex;
+  justify-content: center;
+  flex-direction: column; */
+}
+
+.range-inputs {
+  grid-area: range-inputs; 
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.range-header {
+  grid-area: range-header;
+  display: flex;
+  justify-content: center;
+}
+
+.range-submit{
+  grid-area: range-submit;
+  display: flex;
+  justify-content: center;
+}
